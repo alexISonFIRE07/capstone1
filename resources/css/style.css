@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Abel Regular'), local('Abel-Regular'), url(https://fonts.gstatic.com/s/abel/v8/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 html {
   font-size: 24px;
+  font-family: "Abel"
 }
 
 body {
@@ -7,8 +16,10 @@ body {
   width: 96%;
   margin: auto;
   border: 1px solid black;
-  color: darkslategray;
+  color: dimgray;
 }
+
+
 
 /* header */
 
@@ -20,12 +31,18 @@ header {
   align-items: center;
 }
 
+.mobilenav{
+  display: none;
+}
+
 .container.logo {
   display: flex;
   align-items: center;
   font-size: 1.1rem;
 }
-
+.logo h1 {
+  word-spacing: -5px;
+}
 .container ol{
   display: flex;
 
@@ -38,7 +55,35 @@ header {
 }
 .container.nav a{
   text-decoration: none;
-  color: darkslategray;
+  color: dimgray;
+}
+
+.container.nav a:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 519px) {
+  .logo h1{
+    display: none;
+  }
+  .desktopnav {
+    display: none;
+  }
+  .mobilenav {
+    display: inherit; }
+  header {
+    justify-content: space-between;
+    height: 64px;
+  }
+  .container.logo {
+    width: 25%;
+  }
+  .container.nav {
+    width: 75%;
+  }
+  .container ol{
+    justify-content: space-between;
+  }
 }
 
 /* banner */
@@ -49,11 +94,14 @@ header {
   height: auto;
   background-color: lightgrey;
 }
-.banner img {
-  max-width: 100%;
+.imagewrapper{
   width: 60%;
-  height: 100%;
   margin: 24px 24px 32px 24px;
+}
+.banner img {
+  width: 100%;
+  height: auto;
+
 }
 
 .learn {
@@ -62,24 +110,53 @@ header {
   flex-direction: column;
   justify-content: center;
   margin: 0px 24px;
+  width: 40%;
 }
 
 .learn h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 12px 0px;
+
 }
 
 .learn h2{
   margin: 12px 0px;
+  font-size: 1.25rem;
 }
 
 .button.start{
   margin: 12px 0px;
   padding: 12px 0px;
   text-align: center;
-  width: auto;
-  background-color: darkslategray;
+  width: 400px;
+  background-color: dimgray;
   color: white;
+}
+.button.start:hover{
+  background-color: grey;
+}
+.button.start:active {
+  background-color: black;
+}
+
+@media only screen and (max-width: 519px) {
+  .container.banner {
+    display: inherit;
+  }
+  .banner img{
+    width: 100%;
+    margin: 0px;
+  }
+  .learn {
+    margin: 32px 16px;
+  }
+  .learn h2 {
+    margin: 32px 0px 24px 0px;
+  }
+  .button.start {
+    margin-bottom: 32px;
+    background-color: gray;
+  }
 }
 
 /* featured  section */
@@ -157,4 +234,239 @@ header {
 }
 .small a:hover {
   color: darkblue;
+}
+
+
+@media only screen and (max-width: 519px) {
+  .bigfeature{
+    display: none;
+  }
+  .smallfeature{
+    width: 90%;
+    margin: inherit;
+    margin-bottom: 32px;
+  }
+  .small {
+    flex-direction: column;
+  }
+  .smalltext{
+    margin-left: 32px;
+  }
+  .small img {
+    width: 100%;
+    height:auto;
+  }
+  .small:hover{
+    background-color: inherit;
+  }
+}
+/*  courses */
+
+.startlearning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+.learning {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 32px;
+}
+.bigcourses {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0px 72px 32px 72px;
+}
+
+.courses {
+  width: 30%;
+  height: auto;
+  background-color: white;
+  margin-bottom: 32px;
+}
+
+.coursessmall{
+  padding: 16px 16px 24px 16px;
+
+}
+.courses h1{
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 16px 0px;
+}
+
+.courses p {
+  margin: 16px 0px;
+}
+
+.courses img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 519px) {
+    .startlearning{
+      background-color: white;
+      margin: 32px 0px;
+      border-top: 1px solid lightgrey;
+
+    }
+    .courses img {
+      display: none;
+    }
+    .bigcourses {
+      flex-direction: column;
+      margin: inherit;
+      width: 90%;
+    }
+    .coursessmall{
+      padding: 0px;
+    }
+    .coursessmall p {
+      display: none;
+    }
+    .coursessmall h1 {
+      background-color: lightgrey;
+      padding: 16px;
+      margin: 0px;
+      font-size: 1rem;
+    }
+    .courses {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+}
+/*  thesis section */
+
+.thesis {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 24px;
+
+}
+
+.thesis h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.thesissections {
+  display: flex;
+}
+
+.thesisleft {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 32px 24px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+}
+
+.videotext h1{
+font-size: 2rem;
+font-weight: bold;
+margin: 32px 0px 24px 0px;
+}
+
+.videotext p{
+  font-weight: lighter;
+  font-size: .75rem;
+  margin-bottom: 32px;
+}
+
+.thesisright {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 32px 24px;
+}
+
+.thesissmall {
+  display: flex;
+}
+
+.thesissmall img{
+  width: 35%;
+  height: 100%;
+  margin: 16px;
+}
+
+.thesistext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thesistext h1{
+  font-weight: bolder;
+  margin: 8px 0px;
+  font-size: 1rem;
+}
+.thesistext p{
+  font-weight: lighter;
+  font-size: .75rem;
+  margin: 8px 0px;
+}
+
+.thesissmall:hover {
+  background-color: lightgrey;
+}
+
+@media only screen and (max-width: 519px) {
+  .thesis{
+    border-top: 1px solid lightgrey;
+    margin: 0px;
+}
+  .thesis h1{
+    margin: 32px 0px 16px 0px;
+  }
+  .thesisright{
+    display: none;
+  }
+  .videotext{
+    display: none;
+  }
+  .thesisleft{
+    width: 100%;
+    margin: 0px;
+
+  }
+}
+
+/* footer */
+
+footer {
+  border-top: 1px solid lightgrey;
+  height: 110px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 24px;
+}
+.termlinks a{
+  text-decoration: none;
+  color: royalblue;
+}
+
+@media only screen and (max-width: 519px) {
+  .termlinks {
+    display: none;
+  }
+  .footer p{
+    font-size: .6rem;
+    margin-top: 40px;
+  }
+  footer {
+    height: auto;
+  }
 }
