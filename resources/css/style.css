@@ -1,0 +1,47 @@
+html {
+  font-size: 24px;
+}
+
+body {
+  max-width: 960px;
+  width: 96%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 24px;
+  height: 64px;
+  align-items: center;
+}
+
+.container.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.container ol{
+  display: flex;
+
+}
+
+.container li {
+  margin-left: 16px;
+  font-size: 1rem;
+}
+
+/* banner */
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.banner img {
+  width: 60%;
+  height: auto;
+}
