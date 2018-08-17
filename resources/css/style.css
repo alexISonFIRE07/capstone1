@@ -3,10 +3,11 @@ html {
 }
 
 body {
-  max-width: 960px;
+  max-width: 1260px;
   width: 96%;
   margin: auto;
   border: 1px solid black;
+  color: darkslategray;
 }
 
 /* header */
@@ -33,15 +34,127 @@ header {
 .container li {
   margin-left: 16px;
   font-size: 1rem;
+
+}
+.container.nav a{
+  text-decoration: none;
+  color: darkslategray;
 }
 
 /* banner */
 
-.container {
+.container.banner {
   display: flex;
   justify-content: center;
+  height: auto;
+  background-color: lightgrey;
 }
 .banner img {
+  max-width: 100%;
   width: 60%;
+  height: 100%;
+  margin: 24px 24px 32px 24px;
+}
+
+.learn {
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 24px;
+}
+
+.learn h1 {
+  font-size: 1.5rem;
+  margin: 12px 0px;
+}
+
+.learn h2{
+  margin: 12px 0px;
+}
+
+.button.start{
+  margin: 12px 0px;
+  padding: 12px 0px;
+  text-align: center;
+  width: auto;
+  background-color: darkslategray;
+  color: white;
+}
+
+/* featured  section */
+/* left side */
+.featured {
+  display: flex;
+}
+
+.bigfeature {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 32px 24px;
+}
+.bigfeature img{
+  width: 100%;
   height: auto;
+
+}
+.bigfeature h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 32px 0px 24px 0px;
+}
+.bigfeature p{
+  font-weight: lighter;
+  font-size: .75rem;
+  margin-bottom: 32px;
+}
+
+/* right side */
+.smallfeature{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 32px 24px;
+}
+
+.small {
+  display: flex;
+
+}
+.small img{
+  width: 35%;
+  height: 100%;
+  margin: 16px;
+}
+#toppicture{
+  margin-top: 0px;
+}
+.smalltext{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.smalltext h1{
+  font-weight: bolder;
+  margin: 8px 0px;
+}
+
+.smalltext p {
+  font-weight: lighter;
+  font-size: .75rem;
+  margin: 8px 0px;
+}
+
+.smalltext a{
+  text-decoration: none;
+  color: royalblue;
+}
+
+.small:hover{
+  background-color: lightgrey;
+}
+.small a:hover {
+  color: darkblue;
 }
