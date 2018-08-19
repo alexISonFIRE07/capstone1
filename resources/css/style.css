@@ -143,7 +143,7 @@ header {
   .container.banner {
     display: inherit;
   }
-  .banner img{
+  .imagewrapper{
     width: 100%;
     margin: 0px;
   }
